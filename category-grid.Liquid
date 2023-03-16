@@ -1,0 +1,16 @@
+{% if collections.size > 0 %}
+  <div class="category-grid">
+    <div class="category-grid-inner">
+      {% for collection in collections %}
+        <div class="category">
+          <a href="{{ collection.url }}"><img src="{{ collection.featured_image | img_url: '500x' }}"></a>
+          <div class="category-name">{{ collection.title }}</div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="category-grid-nav">
+      <button class="prev"><i class="fa fa-angle-left"></i></button>
+      <button class="next"><i class="fa fa-angle-right"></i></button>
+    </div>
+  </div>
+{% endif %}
